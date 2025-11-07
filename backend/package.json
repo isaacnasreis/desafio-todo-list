@@ -2,10 +2,27 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "dotenv -e .env -- node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "dotenv -e .env -- nodemon src/index.js",
+    "migrate:dev": "dotenv -e .env -- npx prisma migrate dev"
   },
   "author": "Isaac N. Reis",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "dotenv-cli": "^11.0.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.19.0"
+  }
 }
